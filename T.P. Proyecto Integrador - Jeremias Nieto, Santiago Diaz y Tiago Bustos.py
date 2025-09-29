@@ -8,7 +8,7 @@ def slow_print(text, delay=0.06):
         sys.stdout.flush()
         time.sleep(delay)
 def show_credits():
-    """Muestra los créditos del juego, con un formato mucho más largo y detallado."""
+   
     print("===========================================")
     print("              ✨ CRÉDITOS ✨")
     print("===========================================")
@@ -54,7 +54,7 @@ def show_credits():
     time.sleep(2)
 
 def run_game(palabras):
-    """Función unificada para ejecutar una partida de Ahorcado."""
+
     palabra = random.choice(palabras)
     progreso = ["_"] * len(palabra)
     intentos = 6
@@ -588,3 +588,4 @@ def main_menu():
 
 if __name__ == "__main__":
     main_menu()
+
