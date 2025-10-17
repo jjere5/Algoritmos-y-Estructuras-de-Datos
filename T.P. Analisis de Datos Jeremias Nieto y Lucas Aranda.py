@@ -1,14 +1,18 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 
-sns.set_style("whitegrid")
+
 plt.rcParams['figure.figsize'] = (12, 7)
+plt.style.use('ggplot') 
 pd.options.display.float_format = '{:,.2f}'.format
 pd.set_option('display.max_columns', None)
 
+
+
+
+print("--- PASO 0: CREACIÓN Y CARGA DEL DATAFRAME ---")
 
 # 1. Definición de la Base de Datos Venta_De_Gorras
 data = {
@@ -33,7 +37,9 @@ df['Vendidas'] = df['Vendidas'].astype(float)
 df['Precio'] = df['Precio'].astype(float)
 
 
+
 # 1: COMPRENSIÓN Y CARGA DE DATOS
+
 
 print("\n\n--- 1: COMPRENSIÓN Y CARGA DE DATOS ---")
 
@@ -123,22 +129,22 @@ print(productos_vendidos.to_string(index=False))
 
 
 
-# 4: VISUALIZACIÓN (GRÁFICOS)
+# 4: VISUALIZACIÓN (GRÁFICOS) CON MATPLOTLIB
 
 
-print("\n\n--- 4: VISUALIZACIÓN (GRÁFICOS) CON MATPLOTLIB/SEABORN ---")
+print("\n\n--- 4: VISUALIZACIÓN (GRÁFICOS) CON MATPLOTLIB ---")
 
 # Gráfico 1: Gráfico de Barras - Monto Total por Región (Usando Matplotlib puro)
 plt.figure(figsize=(10, 6))
 
-# Uso directo de plt.bar()
+
 plt.bar(
     ingreso_por_region.index, 
     ingreso_por_region.values, 
-    color=['#4c72b0', '#55a868', '#c44e52', '#8172b2'] 
+    color=['#348ABD', '#A60628', '#7A68A6', '#467821'] # Colores de un estilo Matplotlib
 ) 
 
-# Configuración del eje Y para manejar la escala de Miles de Millones
+
 plt.ticklabel_format(style='sci', axis='y', scilimits=(0, 0)) 
 plt.title('Monto Total Acumulado por Región (Ingreso Estimado)')
 plt.xlabel('Región')
@@ -146,17 +152,24 @@ plt.ylabel('Ingreso Estimado ($)')
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
 plt.show()
-print("Gráfico 1: Gráfico de Barras Creado.")
-print("Muestra la concentración de ingresos en EE. UU. y Argentina.")
+print("Gráfico 1: Gráfico de Barras Creado con Matplotlib.")
 
 
-# Histograma para la columna Precio (Usando Seaborn/Matplotlib)
+
 plt.figure(figsize=(10, 6))
-# Seaborn proporciona una estética más clara y la curva KDE
-sns.histplot(df['Precio'], bins=5, kde=True, color='red')
+
+
+plt.hist(
+    df['Precio'], 
+    bins=5, 
+    color='#4c72b0', 
+    edgecolor='black'
+) 
+
 plt.title('Histograma de la Distribución de Precio')
 plt.xlabel('Precio')
 plt.ylabel('Frecuencia')
+plt.tight_layout()
 plt.show()
-print("\nGráfico 2: Histograma Creado.")
+print("\nGráfico 2: Histograma Creado con Matplotlib.")
 print("La distribución está fuertemente sesgada a la derecha (cola larga de precios altos).")
