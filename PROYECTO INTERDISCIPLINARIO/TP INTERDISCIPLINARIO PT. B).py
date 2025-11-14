@@ -26,7 +26,7 @@ def tiempo_a_segundos(t):
     t = str(t).strip()
     segundos = 0
     
-    # Asume formato 'Xm Ys'
+    # Asumimos formato 'Xm Ys'
     for parte in t.split():
         if 'm' in parte:
             segundos += int(parte.replace('m', '').strip()) * 60
@@ -163,5 +163,6 @@ print(distribucion_puntajes)
 # =====================================================
 # IV. AUTOMATIZACIÓN Y ENTREGA
 # =====================================================
+
 
 generar_informe_completo(df_torneo, top_puntajes, top_veloces, ganadores_por_fecha, distribucion_puntajes)
