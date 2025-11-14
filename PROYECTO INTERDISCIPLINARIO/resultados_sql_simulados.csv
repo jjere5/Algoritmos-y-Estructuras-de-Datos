@@ -1,0 +1,11 @@
+IDALUMNO,NOMBRE,APELLIDO,CURSO,DIVISION,FECHAENVIO,NOTA,TIEMPO_RESPUESTA
+1,Ema,Ezquerro,4,1,2025-11-05,10.0,1m 20s
+2,Melina,Tabuada,4,3,2025-09-15,9.0,2m 10s
+3,Juliette,Letters,4,1,2025-04-04,5.0,1m 55s
+4,Juana,Benitez,4,2,2025-11-20,8.5,1m 35s
+5,Kiara,Palavecino,4,2,2025-09-07,7.0,1m 40s
+6,Olivia,Plotkin,4,3,2025-11-20,10.0,1m 15s
+7,Lourdez,Rodriguez,4,1,2025-11-21,6.0,2m 30s
+8,Elias,Diaz,4,2,2025-11-21,9.5,1m 25s
+9,Lola,Ramirez,4,3,2025-11-22,7.0,2m 00s
+10,Olivia,Rondineau,4,1,2025-11-22,9.0,1m 45s
